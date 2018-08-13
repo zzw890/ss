@@ -14,7 +14,7 @@ public class Book extends HttpServlet {
 	private BookDAO bookDAO = null;
 
 	public Book() {
-		this.bookDAO = new BookDAO();
+		this.bookDAO = new BookDAO();//fhhgfhgf
 	}
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -22,7 +22,7 @@ public class Book extends HttpServlet {
 		String action = request.getParameter("action");
 		System.out.println("\nbook*********************action=" + action);
 		if (action == null || "".equals(action)) {
-			request.setAttribute("error", "ÄúµÄ²Ù×÷ÓÐÎó£¡");
+			request.setAttribute("error", "ï¿½ï¿½ï¿½Ä²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
 			request.getRequestDispatcher("error.jsp")
 					.forward(request, response);
 		} else if ("bookAdd".equals(action)) {
@@ -42,7 +42,7 @@ public class Book extends HttpServlet {
 		}
 	}
 
-	/*********************** Ìí¼ÓÍ¼ÊéÐÅÏ¢ **************************/
+	/*********************** ï¿½ï¿½ï¿½Í¼ï¿½ï¿½ï¿½ï¿½Ï¢ **************************/
 	private void bookAdd(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		BookForm bookForm = new BookForm();
@@ -56,7 +56,7 @@ public class Book extends HttpServlet {
 		bookForm.setPage(request.getParameter("page")==""?0:Integer.parseInt(request.getParameter("page")));
 		bookForm.setBookcaseid(Integer.parseInt(request
 				.getParameter("bookcaseid")));
-		// »ñÈ¡ÏµÍ³ÈÕÆÚ
+		// ï¿½ï¿½È¡ÏµÍ³ï¿½ï¿½ï¿½ï¿½
 		Date date1 = new Date();
 		java.sql.Date date = new java.sql.Date(date1.getTime());
 		bookForm.setInTime(date.toString());
@@ -65,25 +65,25 @@ public class Book extends HttpServlet {
 		if (a == 1) {
 			request.getRequestDispatcher("book_ok.jsp?para=1").forward(request, response);
 		} else if (a == 2) {
-			request.setAttribute("error", "¸ÃÍ¼ÊéÐÅÏ¢ÒÑ¾­Ìí¼Ó£¡");
+			request.setAttribute("error", "ï¿½ï¿½Í¼ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½Ñ¾ï¿½ï¿½ï¿½Ó£ï¿½");
 			request.getRequestDispatcher("error.jsp")
 					.forward(request, response);
 		} else {
-			request.setAttribute("error", "Í¼ÊéÐÅÏ¢Ìí¼ÓÊ§°Ü£¡");
+			request.setAttribute("error", "Í¼ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½Ê§ï¿½Ü£ï¿½");
 			request.getRequestDispatcher("error.jsp")
 					.forward(request, response);
 		}
 	}
 
-	/*********************** ²éÑ¯È«²¿Í¼ÊéÐÅÏ¢ **************************/
+	/*********************** ï¿½ï¿½Ñ¯È«ï¿½ï¿½Í¼ï¿½ï¿½ï¿½ï¿½Ï¢ **************************/
 	private void bookQuery(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		String str = null;
-		request.setAttribute("book", bookDAO.query(str)); // ½«²éÑ¯½á¹û±£´æµ½bookÖÐ
+		request.setAttribute("book", bookDAO.query(str)); // ï¿½ï¿½ï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½æµ½bookï¿½ï¿½
 		request.getRequestDispatcher("book.jsp").forward(request, response);
 	}
 
-	/*********************** Ìõ¼þ²éÑ¯Í¼ÊéÐÅÏ¢ **************************/
+	/*********************** ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¯Í¼ï¿½ï¿½ï¿½ï¿½Ï¢ **************************/
 	private void bookifQuery(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		String str = null;
@@ -92,22 +92,22 @@ public class Book extends HttpServlet {
 					+ request.getParameter("key") + "%";
 		}
 		request.setAttribute("ifbook", bookDAO.query(str));
-		System.out.print("Ìõ¼þ²éÑ¯Í¼ÊéÐÅÏ¢Ê±µÄstr:" + str);
+		System.out.print("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¯Í¼ï¿½ï¿½ï¿½ï¿½Ï¢Ê±ï¿½ï¿½str:" + str);
 		request.getRequestDispatcher("bookQuery.jsp").forward(request, response);
 	}
 
-	/*********************** ²éÑ¯ÐÞ¸ÄÍ¼ÊéÐÅÏ¢ **************************/
+	/*********************** ï¿½ï¿½Ñ¯ï¿½Þ¸ï¿½Í¼ï¿½ï¿½ï¿½ï¿½Ï¢ **************************/
 	private void bookModifyQuery(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		BookForm bookForm = new BookForm();
-		System.out.println("²éÑ¯ÐÞ¸ÄÍ¼ÊéÐÅÏ¢£º" + request.getParameter("ID"));
+		System.out.println("ï¿½ï¿½Ñ¯ï¿½Þ¸ï¿½Í¼ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½" + request.getParameter("ID"));
 		bookForm.setId(Integer.valueOf(request.getParameter("ID")));
 		request.setAttribute("bookQueryif", bookDAO.queryM(bookForm));
 		request.getRequestDispatcher("book_Modify.jsp").forward(request,
 				response);
 	}
 
-	/*********************** ²éÑ¯Í¼ÊéÏêÏ¸ÐÅÏ¢ **************************/
+	/*********************** ï¿½ï¿½Ñ¯Í¼ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½ï¿½Ï¢ **************************/
 	private void bookDetail(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		BookForm bookForm = new BookForm();
@@ -117,12 +117,12 @@ public class Book extends HttpServlet {
 				response);
 	}
 
-	/*********************** ÐÞ¸ÄÍ¼ÊéÐÅÏ¢ **************************/
+	/*********************** ï¿½Þ¸ï¿½Í¼ï¿½ï¿½ï¿½ï¿½Ï¢ **************************/
 	private void bookModify(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
-		BookForm bookForm = new BookForm(); // ÊµÀý»¯BookFormÀà
+		BookForm bookForm = new BookForm(); // Êµï¿½ï¿½ï¿½ï¿½BookFormï¿½ï¿½
 		bookForm.setId(Integer.parseInt(request.getParameter("id")));
-		bookForm.setBarcode(request.getParameter("barcode")); // »ñÈ¡²¢ÉèÖÃÌõÐÎÂëÊôÐÔ
+		bookForm.setBarcode(request.getParameter("barcode")); // ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		bookForm.setBookName(request.getParameter("bookName"));
 		bookForm.setTypeId(Integer.parseInt(request.getParameter("typeId")));
 		bookForm.setAuthor(request.getParameter("author"));
@@ -133,25 +133,25 @@ public class Book extends HttpServlet {
 		bookForm.setBookcaseid(Integer.parseInt(request
 				.getParameter("bookcaseid")));
 		bookForm.setOperator(request.getParameter("operator"));
-		int ret = bookDAO.update(bookForm); // µ÷ÓÃÐÞ¸ÄÍ¼ÊéÐÅÏ¢µÄ·½·¨update()
+		int ret = bookDAO.update(bookForm); // ï¿½ï¿½ï¿½ï¿½ï¿½Þ¸ï¿½Í¼ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½Ä·ï¿½ï¿½ï¿½update()
 		if (ret == 0) {
-			request.setAttribute("error", "ÐÞ¸ÄÍ¼ÊéÐÅÏ¢Ê§°Ü£¡");
+			request.setAttribute("error", "ï¿½Þ¸ï¿½Í¼ï¿½ï¿½ï¿½ï¿½Ï¢Ê§ï¿½Ü£ï¿½");
 			request.getRequestDispatcher("error.jsp")
-					.forward(request, response); // ×ªµ½´íÎóÌáÊ¾Ò³Ãæ
+					.forward(request, response); // ×ªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¾Ò³ï¿½ï¿½
 		} else {
 			request.getRequestDispatcher("book_ok.jsp?para=2").forward(request,
-					response); // ×ªµ½ÐÞ¸Ä³É¹¦Ò³Ãæ
+					response); // ×ªï¿½ï¿½ï¿½Þ¸Ä³É¹ï¿½Ò³ï¿½ï¿½
 		}
 	}
 
-	/*********************** É¾³ýÍ¼ÊéÐÅÏ¢ **************************/
+	/*********************** É¾ï¿½ï¿½Í¼ï¿½ï¿½ï¿½ï¿½Ï¢ **************************/
 	private void bookDel(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		BookForm bookForm = new BookForm();
 		bookForm.setId(Integer.valueOf(request.getParameter("ID")));
 		int ret = bookDAO.delete(bookForm);
 		if (ret == 0) {
-			request.setAttribute("error", "É¾³ýÍ¼ÊéÐÅÏ¢Ê§°Ü£¡");
+			request.setAttribute("error", "É¾ï¿½ï¿½Í¼ï¿½ï¿½ï¿½ï¿½Ï¢Ê§ï¿½Ü£ï¿½");
 			request.getRequestDispatcher("error.jsp")
 					.forward(request, response);
 		} else {
