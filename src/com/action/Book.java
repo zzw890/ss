@@ -14,7 +14,7 @@ public class Book extends HttpServlet {
 	private BookDAO bookDAO = null;
 
 	public Book() {
-		this.bookDAO = new BookDAO();//fhhgfhgf
+		this.bookDAO = new BookDAO();//fhhgfhgfbvcbcv
 	}
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
