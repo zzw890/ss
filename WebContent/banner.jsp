@@ -3,7 +3,7 @@
 String manager=(String)session.getAttribute("manager");
 //楠�璇��ㄦ�锋�����诲�
 if (manager==null || "".equals(manager)){
-	response.sendRedirect("login.jsp");
+	response.sendRedirect("login.jsp");fdsfdsfdsfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsd
 }
 %>
 <meta http-equiv="Content-Type" content="text/html; charset=gb2312">
