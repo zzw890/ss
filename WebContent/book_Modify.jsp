@@ -8,7 +8,7 @@
 <%@ page import="com.dao.PublishingDAO" %>
 <%@ page import="com.actionForm.PublishingForm" %>
 <%@ page import="java.util.*"%>
-<html>
+<html>hghfgh
 <%
 String str=null;
 BookTypeDAO bookTypeDAO=new BookTypeDAO();
