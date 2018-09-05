@@ -13,7 +13,7 @@ import java.util.Date;
 public class Book extends HttpServlet {
 	private BookDAO bookDAO = null;
 
-	public Book() {
+	public Book() {6666666666666666666666888888888888
 		this.bookDAO = new BookDAO();//fhhgfhgfbvcbcvvxvcxvxc zzw123
 	}
 
