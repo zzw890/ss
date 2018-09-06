@@ -13,7 +13,7 @@ import java.util.Date;
 public class Book extends HttpServlet {
 	private BookDAO bookDAO = null;
 
-	public Book() {666666666666666666666688888888888899999
+	public Book() {666666666666666666666688888888888899999258
 		this.bookDAO = new BookDAO();//fhhgfhgfbvcbcvvxvcxvxc zzw123
 	}
 
@@ -22,7 +22,7 @@ public class Book extends HttpServlet {
 		String action = request.getParameter("action");
 		System.out.println("\nbook*********************action=" + action);
 		if (action == null || "".equals(action)) {
-			request.setAttribute("error", "信息错误");
+			request.setAttribute("error", "淇℃伅閿欒");
 			request.getRequestDispatcher("error.jsp")
 					.forward(request, response);
 		} else if ("bookAdd".equals(action)) {
@@ -42,7 +42,7 @@ public class Book extends HttpServlet {
 		}
 	}
 
-	/*********************** 锟斤拷锟酵硷拷锟斤拷锟较� **************************/
+	/*********************** 閿熸枻鎷烽敓閰电》鎷烽敓鏂ゆ嫹閿熻緝锟� **************************/
 	private void bookAdd(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		BookForm bookForm = new BookForm();
@@ -56,7 +56,7 @@ public class Book extends HttpServlet {
 		bookForm.setPage(request.getParameter("page")==""?0:Integer.parseInt(request.getParameter("page")));
 		bookForm.setBookcaseid(Integer.parseInt(request
 				.getParameter("bookcaseid")));
-		// 锟斤拷取系统锟斤拷锟斤拷
+		// 閿熸枻鎷峰彇绯荤粺閿熸枻鎷烽敓鏂ゆ嫹
 		Date date1 = new Date();
 		java.sql.Date date = new java.sql.Date(date1.getTime());
 		bookForm.setInTime(date.toString());
@@ -65,25 +65,25 @@ public class Book extends HttpServlet {
 		if (a == 1) {
 			request.getRequestDispatcher("book_ok.jsp?para=1").forward(request, response);
 		} else if (a == 2) {
-			request.setAttribute("error", "锟斤拷图锟斤拷锟斤拷息锟窖撅拷锟斤拷樱锟�");
+			request.setAttribute("error", "閿熸枻鎷峰浘閿熸枻鎷烽敓鏂ゆ嫹鎭敓绐栨拝鎷烽敓鏂ゆ嫹妯遍敓锟�");
 			request.getRequestDispatcher("error.jsp")
 					.forward(request, response);
 		} else {
-			request.setAttribute("error", "图锟斤拷锟斤拷息锟斤拷锟绞э拷埽锟�");
+			request.setAttribute("error", "鍥鹃敓鏂ゆ嫹閿熸枻鎷锋伅閿熸枻鎷烽敓缁炑嶆嫹鍩介敓锟�");
 			request.getRequestDispatcher("error.jsp")
 					.forward(request, response);
 		}
 	}
 
-	/*********************** 锟斤拷询全锟斤拷图锟斤拷锟斤拷息 **************************/
+	/*********************** 閿熸枻鎷疯鍏ㄩ敓鏂ゆ嫹鍥鹃敓鏂ゆ嫹閿熸枻鎷锋伅 **************************/
 	private void bookQuery(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		String str = null;
-		request.setAttribute("book", bookDAO.query(str)); // 锟斤拷锟斤拷询锟斤拷锟斤拷锟斤拷娴絙ook锟斤拷
+		request.setAttribute("book", bookDAO.query(str)); // 閿熸枻鎷烽敓鏂ゆ嫹璇㈤敓鏂ゆ嫹閿熸枻鎷烽敓鏂ゆ嫹濞寸禉ook閿熸枻鎷�
 		request.getRequestDispatcher("book.jsp").forward(request, response);
 	}
 
-	/*********************** 锟斤拷锟斤拷锟斤拷询图锟斤拷锟斤拷息 **************************/
+	/*********************** 閿熸枻鎷烽敓鏂ゆ嫹閿熸枻鎷疯鍥鹃敓鏂ゆ嫹閿熸枻鎷锋伅 **************************/
 	private void bookifQuery(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		String str = null;
@@ -92,22 +92,22 @@ public class Book extends HttpServlet {
 					+ request.getParameter("key") + "%";
 		}
 		request.setAttribute("ifbook", bookDAO.query(str));
-		System.out.print("锟斤拷锟斤拷锟斤拷询图锟斤拷锟斤拷息时锟斤拷str:" + str);
+		System.out.print("閿熸枻鎷烽敓鏂ゆ嫹閿熸枻鎷疯鍥鹃敓鏂ゆ嫹閿熸枻鎷锋伅鏃堕敓鏂ゆ嫹str:" + str);
 		request.getRequestDispatcher("bookQuery.jsp").forward(request, response);
 	}
 
-	/*********************** 锟斤拷询锟睫革拷图锟斤拷锟斤拷息 **************************/
+	/*********************** 閿熸枻鎷疯閿熺潾闈╂嫹鍥鹃敓鏂ゆ嫹閿熸枻鎷锋伅 **************************/
 	private void bookModifyQuery(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		BookForm bookForm = new BookForm();
-		System.out.println("锟斤拷询锟睫革拷图锟斤拷锟斤拷息锟斤拷" + request.getParameter("ID"));
+		System.out.println("閿熸枻鎷疯閿熺潾闈╂嫹鍥鹃敓鏂ゆ嫹閿熸枻鎷锋伅閿熸枻鎷�" + request.getParameter("ID"));
 		bookForm.setId(Integer.valueOf(request.getParameter("ID")));
 		request.setAttribute("bookQueryif", bookDAO.queryM(bookForm));
 		request.getRequestDispatcher("book_Modify.jsp").forward(request,
 				response);
 	}
 
-	/*********************** 锟斤拷询图锟斤拷锟斤拷细锟斤拷息 **************************/
+	/*********************** 閿熸枻鎷疯鍥鹃敓鏂ゆ嫹閿熸枻鎷风粏閿熸枻鎷锋伅 **************************/
 	private void bookDetail(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		BookForm bookForm = new BookForm();
@@ -117,12 +117,12 @@ public class Book extends HttpServlet {
 				response);
 	}
 
-	/*********************** 锟睫革拷图锟斤拷锟斤拷息 **************************/
+	/*********************** 閿熺潾闈╂嫹鍥鹃敓鏂ゆ嫹閿熸枻鎷锋伅 **************************/
 	private void bookModify(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
-		BookForm bookForm = new BookForm(); // 实锟斤拷锟斤拷BookForm锟斤拷
+		BookForm bookForm = new BookForm(); // 瀹為敓鏂ゆ嫹閿熸枻鎷稡ookForm閿熸枻鎷�
 		bookForm.setId(Integer.parseInt(request.getParameter("id")));
-		bookForm.setBarcode(request.getParameter("barcode")); // 锟斤拷取锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷
+		bookForm.setBarcode(request.getParameter("barcode")); // 閿熸枻鎷峰彇閿熸枻鎷烽敓鏂ゆ嫹閿熸枻鎷烽敓鏂ゆ嫹閿熸枻鎷烽敓鏂ゆ嫹閿熸枻鎷烽敓鏂ゆ嫹
 		bookForm.setBookName(request.getParameter("bookName"));
 		bookForm.setTypeId(Integer.parseInt(request.getParameter("typeId")));
 		bookForm.setAuthor(request.getParameter("author"));
@@ -133,25 +133,25 @@ public class Book extends HttpServlet {
 		bookForm.setBookcaseid(Integer.parseInt(request
 				.getParameter("bookcaseid")));
 		bookForm.setOperator(request.getParameter("operator"));
-		int ret = bookDAO.update(bookForm); // 锟斤拷锟斤拷锟睫革拷图锟斤拷锟斤拷息锟侥凤拷锟斤拷update()
+		int ret = bookDAO.update(bookForm); // 閿熸枻鎷烽敓鏂ゆ嫹閿熺潾闈╂嫹鍥鹃敓鏂ゆ嫹閿熸枻鎷锋伅閿熶茎鍑ゆ嫹閿熸枻鎷穟pdate()
 		if (ret == 0) {
-			request.setAttribute("error", "锟睫革拷图锟斤拷锟斤拷息失锟杰ｏ拷");
+			request.setAttribute("error", "閿熺潾闈╂嫹鍥鹃敓鏂ゆ嫹閿熸枻鎷锋伅澶遍敓鏉帮綇鎷�");
 			request.getRequestDispatcher("error.jsp")
-					.forward(request, response); // 转锟斤拷锟斤拷锟斤拷锟斤拷示页锟斤拷
+					.forward(request, response); // 杞敓鏂ゆ嫹閿熸枻鎷烽敓鏂ゆ嫹閿熸枻鎷风ず椤甸敓鏂ゆ嫹
 		} else {
 			request.getRequestDispatcher("book_ok.jsp?para=2").forward(request,
-					response); // 转锟斤拷锟睫改成癸拷页锟斤拷
+					response); // 杞敓鏂ゆ嫹閿熺潾鏀规垚鐧告嫹椤甸敓鏂ゆ嫹
 		}
 	}
 
-	/*********************** 删锟斤拷图锟斤拷锟斤拷息 **************************/
+	/*********************** 鍒犻敓鏂ゆ嫹鍥鹃敓鏂ゆ嫹閿熸枻鎷锋伅 **************************/
 	private void bookDel(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		BookForm bookForm = new BookForm();
 		bookForm.setId(Integer.valueOf(request.getParameter("ID")));
 		int ret = bookDAO.delete(bookForm);
 		if (ret == 0) {
-			request.setAttribute("error", "删锟斤拷图锟斤拷锟斤拷息失锟杰ｏ拷");
+			request.setAttribute("error", "鍒犻敓鏂ゆ嫹鍥鹃敓鏂ゆ嫹閿熸枻鎷锋伅澶遍敓鏉帮綇鎷�");
 			request.getRequestDispatcher("error.jsp")
 					.forward(request, response);
 		} else {
