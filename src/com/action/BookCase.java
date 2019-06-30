@@ -1,4 +1,3 @@
 zzw
 ws
-
-zzw
+wszzw
