@@ -95,4 +95,4 @@ public class BookCase extends HttpServlet {
 	throws ServletException, IOException {
 
 doGet(request, response);
-}//zzwws
+}//ws
