@@ -144,7 +144,7 @@ public class ReaderType extends HttpServlet {
 		}
 	}
 
-	public void doPost(HttpServletRequest request, HttpServletResponse response)
+	public void doPost(HttpServletRequest request, HttpServletResponse response)//ws
 			throws ServletException, IOException {//zzw
 
 
