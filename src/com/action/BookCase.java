@@ -1,4 +1,4 @@
-﻿package com.action;
+package com.action;
 
 import java.io.IOException;
 
@@ -95,5 +95,4 @@ public class BookCase extends HttpServlet {
 	throws ServletException, IOException {
 
 doGet(request, response);
-}
-//zzw
+}//zzwws
