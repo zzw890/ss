@@ -1,4 +1,4 @@
-package com.action;
+﻿package com.action;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -147,6 +147,6 @@ public class ReaderType extends HttpServlet {
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		doGet(request, response);
+		doGet(request, response);//zzw
 	}
 }//wsws
