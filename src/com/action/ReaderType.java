@@ -141,13 +141,21 @@ public class ReaderType extends HttpServlet {
 		} else {
 			request.getRequestDispatcher("readerType_ok.jsp?para=3").forward(
 					request, response);
-		}//zzwzzw
-	}
 
+		}//zzwzzwws
 	public void doPost(HttpServletRequest request, HttpServletResponse response)//ws
 			throws ServletException, IOException {//zzw
+=======
+	public void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {//zzw
+>>>>>>> .theirs
 
+<<<<<<< .mine
 
 		doGet(request, response);//wsws
+=======
+		doGet(request, response);
+
+>>>>>>> .theirs
 	}
 }//wswsws
