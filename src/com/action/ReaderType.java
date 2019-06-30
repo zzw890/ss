@@ -20,7 +20,7 @@ public class ReaderType extends HttpServlet {
 		String action = request.getParameter("action");
 		System.out.println("\nreaderType*********************action=" + action);
 		if (action == null || "".equals(action)) {
-			request.setAttribute("error", "ÄúµÄ²Ù×÷ÓĞÎó£¡");
+			request.setAttribute("error", "æ‚¨çš„æ“ä½œæœ‰è¯¯ï¼");
 			request.getRequestDispatcher("error.jsp")
 					.forward(request, response);
 		} else if ("readerTypeAdd".equals(action)) {
@@ -37,7 +37,7 @@ public class ReaderType extends HttpServlet {
 	}
 
 	/***********************
-	 * Ìí¼Ó¶ÁÕßÀàĞÍĞÅÏ¢
+	 * æ·»åŠ è¯»è€…ç±»å‹ä¿¡æ¯
 	 * 
 	 * @throws IOException
 	 * @throws ServletException
@@ -52,11 +52,11 @@ public class ReaderType extends HttpServlet {
 				.getParameter("number")));
 		int a = readerTypeDAO.insert(readerTypeForm);
 		if (a == 0) {
-			request.setAttribute("error", "¶ÁÕßÀàĞÍĞÅÏ¢Ìí¼ÓÊ§°Ü£¡");
+			request.setAttribute("error", "è¯»è€…ç±»å‹ä¿¡æ¯æ·»åŠ å¤±è´¥ï¼");
 			request.getRequestDispatcher("error.jsp")
 					.forward(request, response);
 		} else if (a == 2) {
-			request.setAttribute("error", "¸Ã¶ÁÕßÀàĞÍĞÅÏ¢ÒÑ¾­Ìí¼Ó£¡");
+			request.setAttribute("error", "è¯¥è¯»è€…ç±»å‹ä¿¡æ¯å·²ç»æ·»åŠ ï¼");
 			request.getRequestDispatcher("error.jsp")
 					.forward(request, response);
 		} else {
@@ -66,7 +66,7 @@ public class ReaderType extends HttpServlet {
 	}
 
 	/***********************
-	 * ²éÑ¯È«²¿¶ÁÕßÀàĞÍĞÅÏ¢
+	 * æŸ¥è¯¢å…¨éƒ¨è¯»è€…ç±»å‹ä¿¡æ¯
 	 * 
 	 * @throws IOException
 	 * @throws ServletException
@@ -81,7 +81,7 @@ public class ReaderType extends HttpServlet {
 	}
 
 	/***********************
-	 * ²éÑ¯ĞŞ¸Ä¶ÁÕßÀàĞÍĞÅÏ¢
+	 * æŸ¥è¯¢ä¿®æ”¹è¯»è€…ç±»å‹ä¿¡æ¯
 	 * 
 	 * @throws IOException
 	 * @throws ServletException
@@ -98,7 +98,7 @@ public class ReaderType extends HttpServlet {
 	}
 
 	/***********************
-	 * ĞŞ¸Ä¶ÁÕßÀàĞÍĞÅÏ¢
+	 * ä¿®æ”¹è¯»è€…ç±»å‹ä¿¡æ¯
 	 * 
 	 * @throws IOException
 	 * @throws ServletException
@@ -113,7 +113,7 @@ public class ReaderType extends HttpServlet {
 				.getParameter("number")));
 		int ret = readerTypeDAO.update(readerTypeForm);
 		if (ret == 0) {
-			request.setAttribute("error", "ĞŞ¸Ä¶ÁÕßÀàĞÍĞÅÏ¢Ê§°Ü£¡");
+			request.setAttribute("error", "ä¿®æ”¹è¯»è€…ç±»å‹ä¿¡æ¯å¤±è´¥ï¼");
 			request.getRequestDispatcher("error.jsp")
 					.forward(request, response);
 		} else {
@@ -123,7 +123,7 @@ public class ReaderType extends HttpServlet {
 	}
 
 	/***********************
-	 * É¾³ı¶ÁÕßÀàĞÍĞÅÏ¢
+	 * åˆ é™¤è¯»è€…ç±»å‹ä¿¡æ¯
 	 * 
 	 * @throws IOException
 	 * @throws ServletException
@@ -135,7 +135,7 @@ public class ReaderType extends HttpServlet {
 		readerTypeForm.setId(Integer.valueOf(request.getParameter("ID")));
 		int ret = readerTypeDAO.delete(readerTypeForm);
 		if (ret == 0) {
-			request.setAttribute("error", "É¾³ı¶ÁÕßÀàĞÍĞÅÏ¢Ê§°Ü£¡");
+			request.setAttribute("error", "åˆ é™¤è¯»è€…ç±»å‹ä¿¡æ¯å¤±è´¥ï¼");
 			request.getRequestDispatcher("error.jsp")
 					.forward(request, response);
 		} else {
@@ -149,4 +149,4 @@ public class ReaderType extends HttpServlet {
 
 		doGet(request, response);
 	}
-}
+}//ws
