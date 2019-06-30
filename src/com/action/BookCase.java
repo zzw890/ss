@@ -33,30 +33,30 @@ public class BookCase extends HttpServlet {
         bookCaseDel(request,response);
     }
     }
- /***********************Ìí¼ÓÊé¼ÜĞÅÏ¢**************************/
+ /***********************æ·»åŠ ä¹¦æ¶ä¿¡æ¯**************************/
  private void bookCaseAdd(HttpServletRequest request, HttpServletResponse response)
 	throws ServletException, IOException {
 	 BookCaseForm bookCaseForm=new BookCaseForm();
         bookCaseForm.setName(request.getParameter("name"));
         int a=bookCaseDAO.insert(bookCaseForm);
         if(a==0){
-            request.setAttribute("error","Êé¼ÜĞÅÏ¢Ìí¼ÓÊ§°Ü£¡");
+            request.setAttribute("error","ä¹¦æ¶ä¿¡æ¯æ·»åŠ å¤±è´¥ï¼");
             request.getRequestDispatcher("error.jsp").forward(request, response);
       }else if(a==2){
-          request.setAttribute("error","¸ÃÊé¼ÜĞÅÏ¢ÒÑ¾­Ìí¼Ó£¡");
+          request.setAttribute("error","è¯¥ä¹¦æ¶ä¿¡æ¯å·²ç»æ·»åŠ ï¼");
           request.getRequestDispatcher("error.jsp").forward(request, response);
       }else{
     	  request.getRequestDispatcher("bookcase_ok.jsp?para=1").forward(request, response);
      }
     }
-    /***********************²éÑ¯È«²¿Êé¼ÜĞÅÏ¢**************************/
+    /***********************æŸ¥è¯¢å…¨éƒ¨ä¹¦æ¶ä¿¡æ¯**************************/
     private void bookCaseQuery(HttpServletRequest request, HttpServletResponse response)
 	throws ServletException, IOException {
     String str=null;
     request.setAttribute("bookcase",bookCaseDAO.query(str));
     request.getRequestDispatcher("bookcase.jsp").forward(request, response);
     }
-     /***********************²éÑ¯ĞŞ¸ÄÊé¼ÜĞÅÏ¢**************************/
+     /***********************æŸ¥è¯¢ä¿®æ”¹ä¹¦æ¶ä¿¡æ¯**************************/
      private void bookCaseModifyQuery(HttpServletRequest request, HttpServletResponse response)
  	throws ServletException, IOException {
     	 BookCaseForm bookCaseForm=new BookCaseForm();
@@ -64,7 +64,7 @@ public class BookCase extends HttpServlet {
          request.setAttribute("bookCaseQueryif",bookCaseDAO.queryM(bookCaseForm));
          request.getRequestDispatcher("bookCase_Modify.jsp").forward(request, response);
      }
-     /***********************ĞŞ¸ÄÊé¼ÜĞÅÏ¢**************************/
+     /***********************ä¿®æ”¹ä¹¦æ¶ä¿¡æ¯**************************/
      private void bookCaseModify(HttpServletRequest request, HttpServletResponse response)
  	throws ServletException, IOException {
     	 BookCaseForm bookCaseForm=new BookCaseForm();
@@ -72,20 +72,20 @@ public class BookCase extends HttpServlet {
          bookCaseForm.setName(request.getParameter("name"));
          int ret=bookCaseDAO.update(bookCaseForm);
          if(ret==0){
-             request.setAttribute("error","ĞŞ¸ÄÊé¼ÜĞÅÏ¢Ê§°Ü£¡");
+             request.setAttribute("error","ä¿®æ”¹ä¹¦æ¶ä¿¡æ¯å¤±è´¥ï¼");
              request.getRequestDispatcher("error.jsp").forward(request, response);
          }else{
         	 request.getRequestDispatcher("bookcase_ok.jsp?para=2").forward(request, response);
          }
      }
-     /***********************É¾³ıÊé¼ÜĞÅÏ¢**************************/
+     /***********************åˆ é™¤ä¹¦æ¶ä¿¡æ¯**************************/
      private void bookCaseDel(HttpServletRequest request, HttpServletResponse response)
  	throws ServletException, IOException {
          BookCaseForm bookCaseForm=new BookCaseForm();
          bookCaseForm.setId(Integer.valueOf(request.getParameter("ID")));
          int ret=bookCaseDAO.delete(bookCaseForm);
          if(ret==0){
-             request.setAttribute("error","É¾³ıÊé¼ÜĞÅÏ¢Ê§°Ü£¡");
+             request.setAttribute("error","åˆ é™¤ä¹¦æ¶ä¿¡æ¯å¤±è´¥ï¼");
              request.getRequestDispatcher("error.jsp").forward(request, response);
          }else{
         	 request.getRequestDispatcher("bookcase_ok.jsp?para=3").forward(request, response);
@@ -97,4 +97,4 @@ public class BookCase extends HttpServlet {
 doGet(request, response);
 }
 }
-//zzw
+//zzwws
