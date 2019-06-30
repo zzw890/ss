@@ -149,4 +149,4 @@ public class ReaderType extends HttpServlet {
 
 		doGet(request, response);//zzw
 	}
-}//wsws
+}//wswsws
